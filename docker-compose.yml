@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  ip-tracker:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./ips.json:/app/ips.json
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
